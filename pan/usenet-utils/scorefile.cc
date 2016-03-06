@@ -396,7 +396,7 @@ namespace
       return;
 
     if (test->_aggregates.size() == 1)
-      test = test->_aggregates[0];
+      *test = *test->_aggregates[0]; // this is suspect if subclasses could be present
     else foreach (FilterInfo::aggregatesp_t, test->_aggregates, it)
       normalize_test (*it);
   }

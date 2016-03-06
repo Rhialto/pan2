@@ -38,6 +38,9 @@ FilterInfo :: clear ()
   _ge = 0;
   _header.clear ();
   _text.clear ();
+  foreach (aggregatesp_t, _aggregates, it) {
+    delete *it;
+  }
   _aggregates.clear ();
   _negate = false;
   _needs_body = false;
