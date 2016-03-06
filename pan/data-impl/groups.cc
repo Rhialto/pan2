@@ -81,7 +81,7 @@ namespace
   }
 }
 
-#include <ext/algorithm>
+#include <algorithm>
 
 void
 DataImpl :: load_newsrc (const Quark       & server,
