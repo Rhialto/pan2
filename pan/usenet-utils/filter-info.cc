@@ -289,29 +289,29 @@ FilterInfo :: describe () const
   {
     ret = _("Any of these tests fail:");
     ret += "\n";
-    foreach_const (aggregates_t, _aggregates, it)
-      ret += "   " + it->describe() + "\n";
+    foreach_const (aggregatesp_t, _aggregates, it)
+      ret += "   " + (*it)->describe() + "\n";
   }
   else if (_type==AGGREGATE_AND)
   {
     ret = _("All of these tests pass:");
     ret += "\n";
-    foreach_const (aggregates_t, _aggregates, it)
-      ret += "   " + it->describe() + "\n";
+    foreach_const (aggregatesp_t, _aggregates, it)
+      ret += "   " + (*it)->describe() + "\n";
   }
   else if (_type==AGGREGATE_OR && _negate)
   {
     ret = _("None of these tests pass:");
     ret += "\n";
-    foreach_const (aggregates_t, _aggregates, it)
-      ret += "   " + it->describe() + "\n";
+    foreach_const (aggregatesp_t, _aggregates, it)
+      ret += "   " + (*it)->describe() + "\n";
   }
   else if (_type==AGGREGATE_OR)
   {
     ret = _("Any of these tests pass:");
     ret += "\n";
-    foreach_const (aggregates_t, _aggregates, it)
-      ret += "   " + it->describe() + "\n";
+    foreach_const (aggregatesp_t, _aggregates, it)
+      ret += "   " + (*it)->describe() + "\n";
   }
 
   return ret;
