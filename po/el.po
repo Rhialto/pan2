@@ -3883,7 +3883,6 @@ msgstr "χωρίς ηλ. _διεύθυνση"
 #~ msgid "_Download Meter Preferences"
 #~ msgstr "_Μεταφόρτωση προτιμήσεων μέτρου"
 
-#~| msgid "Pan: Download Headers"
 #~ msgid "Pan: Download Meter Preferences"
 #~ msgstr "Pan: Μεταφόρτωση προτιμήσεων μέτρου"
 
@@ -3893,7 +3892,6 @@ msgstr "χωρίς ηλ. _διεύθυνση"
 #~ msgid "Warn"
 #~ msgstr "Προειδοποίηση"
 
-#~| msgid "Connecting to mail server"
 #~ msgid "Disconnect from server"
 #~ msgstr "Αποσύνδεση από τον διακομιστή"
 
@@ -3936,7 +3934,6 @@ msgstr "χωρίς ηλ. _διεύθυνση"
 #~ msgstr "Ανανέωση"
 
 #
-#~| msgid "Refresh Article Counts"
 #~ msgid "Refresh current results"
 #~ msgstr "Ανανέωση τρεχόντων αποτελεσμάτων"
 

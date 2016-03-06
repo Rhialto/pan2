@@ -3827,18 +3827,15 @@ msgstr "sin_correo-e"
 #~ msgid "Size (largest first)"
 #~ msgstr "Tamaño (más grandes primero)"
 
-#~| msgid "Download Limit"
 #~ msgid "Download"
 #~ msgstr "Descargar"
 
-#~| msgid "Group (regex)"
 #~ msgid "Name (regex)"
 #~ msgstr "Nombre (exp-reg)"
 
 #~ msgid "Release Info"
 #~ msgstr "Información de la versión"
 
-#~| msgid "_Download Meter Preferences"
 #~ msgid "Download selected Release/Files"
 #~ msgstr "Descargar los archivos/versiones seleccionados"
 
