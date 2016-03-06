@@ -332,7 +332,7 @@ Scorefile :: parse_file (ParseContext& context, const StringView& filename)
       val.trim ();
 
       FilterInfo::aggregatesp_t& aggregates (context.get_current_test()->_aggregates);
-      aggregates.resize (aggregates.size() + 1);
+      aggregates.push_back (new FilterInfo);
       FilterInfo& test (*aggregates.back());
  
       if (!key.strncasecmp ("Lines", 5))
