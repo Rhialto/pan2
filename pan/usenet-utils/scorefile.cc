@@ -395,9 +395,17 @@ namespace
     if ((test->_type!=test->AGGREGATE_AND) && (test->_type!=test->AGGREGATE_OR))
       return;
 
-    if (test->_aggregates.size() == 1)
+    if (test->_aggregates.size() == 1) {
       *test = *test->_aggregates[0]; // this is suspect if subclasses could be present
-    else foreach (FilterInfo::aggregatesp_t, test->_aggregates, it)
+      /* We should delete all FilterInfos in the aggregates except the
+       * one we're copying here. Fortunately, there are none. So we seem
+       * to get away with sloppy memory management here (not having an
+       * `operator =' or copy constructor). In fact, when/if we do get
+       * those, getting this bit right might be tricky; using a
+       * temporary intermediate copy might be needed.
+       */
+
+    } else foreach (FilterInfo::aggregatesp_t, test->_aggregates, it)
       normalize_test (*it);
   }
 }
