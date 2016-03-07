@@ -1390,7 +1390,6 @@ HeaderPane :: rebuild_filter (const std::string& text, int mode)
   f.set_type_aggregate_and ();
 
   // entry field filter...
-  FilterInfo entry_filter;
   if (!text.empty())
   {
     FilterInfo *entry_filter = new FilterInfo;
