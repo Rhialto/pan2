@@ -31,6 +31,52 @@ using namespace pan;
 ****
 ***/
 
+/*
+ * Copy-and-swap idiom according to
+ * http://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom
+ */
+
+FilterInfo :: FilterInfo (const FilterInfo &that)
+  : _type(that._type)
+  , _ge(that._ge)
+  , _header(that._header)
+  , _text(that._text)
+  , _negate(that._negate)
+  , _needs_body(that._needs_body)
+{
+  foreach_const (aggregatesp_t, that._aggregates, it) {
+    _aggregates.push_back (new FilterInfo(**it));
+  }
+}
+
+void
+swap (FilterInfo &first, FilterInfo &second)
+{
+  using std::swap;
+
+  swap (first._type,       second._type);
+  swap (first._ge,         second._ge);
+  swap (first._header,     second._header);
+  swap (first._text,       second._text);
+  swap (first._aggregates, second._aggregates);
+  swap (first._negate,     second._negate);
+  swap (first._needs_body, second._needs_body);
+}
+
+FilterInfo &FilterInfo::operator = (FilterInfo other)
+{
+  swap (*this, other);
+
+  return *this;
+}
+
+FilterInfo :: ~FilterInfo ()
+{
+  foreach (aggregatesp_t, _aggregates, it) {
+    delete *it;
+  }
+}
+
 void
 FilterInfo :: clear ()
 {

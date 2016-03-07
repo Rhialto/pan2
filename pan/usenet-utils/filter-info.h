@@ -25,6 +25,16 @@
 #include <pan/general/string-view.h>
 #include <pan/general/text-match.h>
 
+/**
+ * Pre-declaring swap(...) is a bit involved, given the use
+ * of the namespace pan and it needs to be outside.
+ */
+namespace pan {
+  class FilterInfo;
+};
+
+void swap(pan::FilterInfo &first, pan::FilterInfo &second);
+
 namespace pan
 {
   /**
@@ -56,11 +66,10 @@ namespace pan
     public:
       bool empty() const { return _type == TYPE_ERR; }
       FilterInfo () { clear(); }
-      virtual ~FilterInfo () {
-        foreach (aggregatesp_t, _aggregates, it) {
-          delete *it;
-        }
-      }
+      FilterInfo (const FilterInfo &that);
+      friend void ::swap(FilterInfo &first, FilterInfo &second);
+      FilterInfo &operator = (FilterInfo other);
+      virtual ~FilterInfo ();
 
     public:
 
